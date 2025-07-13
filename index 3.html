@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Animes - Início</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Cor de fundo escura */
+            color: #e0e0e0; /* Cor do texto padrão */
+        }
+        /* Estilos para a barra de rolagem */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f47521; /* Cor laranja da Crunchyroll */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e06a1a;
+        }
+        /* Custom styles for dropdown visibility */
+        .dropdown-menu {
+            display: none;
+        }
+        .dropdown-menu.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="bg-zinc-900 shadow-lg py-4 px-6 md:px-10 flex items-center justify-between sticky top-0 z-50 rounded-b-lg">
+        <!-- Logo -->
+        <div class="flex items-center space-x-4">
+            <a href="file:///C:/Users/Nycolas/Desktop/Portifolio/Pagina%202.html#" class="text-white text-2xl font-bold rounded-md px-2 py-1 bg-orange-600 hover:bg-orange-700 transition-colors">
+                MeusAnimes
+            </a>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="file:///C:/Users/Nycolas/Desktop/Portifolio/Pagina%202.html#" class="text-gray-300 hover:text-white transition-colors text-lg font-medium rounded-md px-3 py-1">Início</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors text-lg font-medium rounded-md px-3 py-1">Navegar</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors text-lg font-medium rounded-md px-3 py-1">Simulcasts</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors text-lg font-medium rounded-md px-3 py-1">Manga</a>
+            </nav>
+        </div>
+
+        <!-- Search and User Actions -->
+        <div class="flex items-center space-x-4">
+            <div class="relative hidden sm:block">
+                <input type="text" placeholder="Pesquisar..." class="bg-zinc-800 text-white rounded-full py-2 pl-4 pr-10 focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all duration-300 w-48">
+                <svg class="w-5 h-5 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <!-- User Avatar and Dropdown -->
+            <div class="relative">
+                <img id="userAvatar" src="https://i.pinimg.com/736x/6f/32/63/6f3263dd461f80bf8458d4dc186b6932.jpg" alt="User Avatar" class="w-10 h-10 rounded-full cursor-pointer border-2 border-orange-500">
+                <!-- Dropdown Menu -->
+                <div id="dropdownMenu" class="dropdown-menu absolute right-0 mt-2 w-64 bg-zinc-800 rounded-md shadow-lg py-1 z-50">
+                    <!-- User Info in Dropdown -->
+                    <div class="flex items-center p-4 border-b border-zinc-700">
+                        <img src="img perfil/img 2.jpg" alt="Profile System" class="w-12 h-12 rounded-full mr-3 border-2 border-orange-500">
+                        <div>
+                            <p class="text-white font-semibold">SYSTEM</p>
+                            <p class="text-yellow-500 text-sm"><i class="fas fa-crown mr-1"></i>Membro Premium</p>
+                        </div>
+                        <a href="#" class="ml-auto text-gray-400 hover:text-white transition-colors">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                    </div>
+                    <a href="file:///C:/Users/Nycolas/Desktop/Portifolio/Editar%20Perfil.html" class="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-zinc-700 transition-colors">
+                        <i class="fas fa-user-circle mr-3 w-5"></i>Meu Perfil
+                    </a>
+                    <a href="file:///C:/Users/Nycolas/Desktop/Portifolio/index.html" class="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-zinc-700 transition-colors">
+                        <i class="fas fa-exchange-alt mr-3 w-5"></i>Trocar de Perfil
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-zinc-700 transition-colors">
+                        <i class="fas fa-cog mr-3 w-5"></i>Configurações
+                    </a>
+                    <div class="border-t border-zinc-700 my-1"></div>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-zinc-700 transition-colors">
+                        <i class="fas fa-bookmark mr-3 w-5"></i>Fila
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-zinc-700 transition-colors">
+                        <i class="fas fa-list-ul mr-3 w-5"></i>Minha lista
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-zinc-700 transition-colors">
+                        <i class="fas fa-history mr-3 w-5"></i>Histórico
+                    </a>
+                    <div class="border-t border-zinc-700 my-1"></div>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-zinc-700 transition-colors relative">
+                        <i class="fas fa-bell mr-3 w-5"></i>Notificações
+                        <span class="ml-auto bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">1</span>
+                    </a>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-zinc-700 transition-colors">
+                        <i class="fas fa-gift mr-3 w-5"></i>Cartão de Presente
+                        <span class="ml-auto text-gray-500 text-xs">Resgate aqui.</span>
+                    </a>
+                    <div class="border-t border-zinc-700 my-1"></div>
+                    <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-300 hover:bg-zinc-700 transition-colors">
+                        <i class="fas fa-sign-out-alt mr-3 w-5"></i>Sair
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    
+
+        <!-- Featured Content Section (Hero) -->
+        <section class="mb-12 relative rounded-xl overflow-hidden shadow-xl">
+            <img src="https://nexogeek.com.br/wp-content/uploads/2024/06/Anime-de-Gachiakuta-Oficialmente-Anunciado-para-2025.png" alt="Featured Anime Banner" class="w-full h-64 md:h-96 object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex items-end p-8">
+                <div>
+                    <h2 class="text-white text-3xl md:text-5xl font-bold mb-3 drop-shadow-lg">Título do Anime em Destaque</h2>
+                    <p class="text-gray-300 text-lg mb-4 max-w-2xl hidden md:block">Uma breve sinopse do anime em destaque, cativando o espectador com detalhes emocionantes e personagens intrigantes.</p>
+                    <button class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-6 rounded-full transition-colors text-lg shadow-md hover:shadow-lg">
+                        Assistir Agora
+                    </button>
+                </div>
+            </div>
+        </section>
+
+               <!-- Content Rows/Grids -->
+        <section class="mb-12">
+            <h3 class="text-white text-2xl md:text-3xl font-bold mb-6">Novos Lançamentos</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+                <!-- Anime Card 1 -->
+                <a href="anime-details.html" class="anime-card-link bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group block relative">
+                    <img src="img perfil/download.jpeg" alt="Anime Thumbnail" class="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-3">
+                        <h4 class="text-white font-semibold text-lg truncate">DAN DAN DAN</h4>
+                        <p class="text-gray-400 text-sm">Fantasia, Ação</p>
+                    </div>
+                    <!-- Synopsis Overlay -->
+                    <div class="anime-card-overlay">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg mb-2">Aventura Épica</h4>
+                            <p class="synopsis-text">A trama se desenrola quando Momo e Okarun, em suas tentativas de provar a existência de fantasmas e alienígenas, respectivamente, visitam locais associados a essas entidades. Momo vai a um hospital abandonado onde houve relatos de OVNIs, enquanto Okarun visita um túnel assombrado. No entanto, ambos acabam enfrentando realidades paranormais que transcendem suas crenças iniciais. Momo desperta poderes ocultos e Okarun ganha habilidades devido a uma maldição, levando-os a lutar juntos contra as forças sobrenaturais. </p>
+                            <p class="text-gray-400 text-sm mt-2">2 Temporadas</p>
+                            <p class="text-gray-400 text-sm">15 Episódios</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button title="Adicionar à Fila"><i class="fas fa-bookmark"></i></button>
+                            <button title="Iniciar Reprodução"><i class="fas fa-play-circle text-orange-500"></i></button>
+                            <button title="Mais Informações"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                </a>
+                <!-- Anime Card 2 -->
+                <a href="anime-details.html" class="anime-card-link bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group block relative">
+                    <img src="https://placehold.co/300x450/4a4a4a/ffffff?text=Anime+2" alt="Anime Thumbnail" class="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-3">
+                        <h4 class="text-white font-semibold text-lg truncate">Mistério Profundo</h4>
+                        <p class="text-gray-400 text-sm">Suspense, Drama</p>
+                    </div>
+                    <!-- Synopsis Overlay -->
+                    <div class="anime-card-overlay">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg mb-2">Mistério Profundo</h4>
+                            <p class="synopsis-text">Um detetive solitário é arrastado para um caso complexo de desaparecimentos em uma cidade isolada. À medida que ele se aprofunda, segredos sombrios da comunidade vêm à tona, desafiando sua percepção da realidade.</p>
+                            <p class="text-gray-400 text-sm mt-2">2 Temporadas</p>
+                            <p class="text-gray-400 text-sm">24 Episódios</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button title="Adicionar à Fila"><i class="fas fa-bookmark"></i></button>
+                            <button title="Iniciar Reprodução"><i class="fas fa-play-circle text-orange-500"></i></button>
+                            <button title="Mais Informações"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                </a>
+                <!-- Anime Card 3 -->
+                <a href="anime-details.html" class="anime-card-link bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group block relative">
+                    <img src="https://placehold.co/300x450/4a4a4a/ffffff?text=Anime+3" alt="Anime Thumbnail" class="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-3">
+                        <h4 class="text-white font-semibold text-lg truncate">Comédia Romântica</h4>
+                        <p class="text-gray-400 text-sm">Romance, Comédia</p>
+                    </div>
+                    <!-- Synopsis Overlay -->
+                    <div class="anime-card-overlay">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg mb-2">Comédia Romântica</h4>
+                            <p class="synopsis-text">Dois estudantes com personalidades opostas se encontram em situações hilárias e embaraçosas, lentamente percebendo que o amor pode surgir nos lugares mais inesperados, mesmo com todas as brigas e mal-entendidos.</p>
+                            <p class="text-gray-400 text-sm mt-2">1 Temporada</p>
+                            <p class="text-gray-400 text-sm">12 Episódios</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button title="Adicionar à Fila"><i class="fas fa-bookmark"></i></button>
+                            <button title="Iniciar Reprodução"><i class="fas fa-play-circle text-orange-500"></i></button>
+                            <button title="Mais Informações"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                </a>
+                <!-- Anime Card 4 -->
+                <a href="anime-details.html" class="anime-card-link bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group block relative">
+                    <img src="https://placehold.co/300x450/4a4a4a/ffffff?text=Anime+4" alt="Anime Thumbnail" class="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-3">
+                        <h4 class="text-white font-semibold text-lg truncate">Ficção Científica</h4>
+                        <p class="text-gray-400 text-sm">Sci-Fi, Ação</p>
+                    </div>
+                    <!-- Synopsis Overlay -->
+                    <div class="anime-card-overlay">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg mb-2">Ficção Científica</h4>
+                            <p class="synopsis-text">No futuro distante, a humanidade luta pela sobrevivência em um planeta desolado. Um grupo de cientistas e soldados embarca em uma missão desesperada para encontrar um novo lar, enfrentando perigos cósmicos e dilemas morais.</p>
+                            <p class="text-gray-400 text-sm mt-2">3 Temporadas</p>
+                            <p class="text-gray-400 text-sm">36 Episódios</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button title="Adicionar à Fila"><i class="fas fa-bookmark"></i></button>
+                            <button title="Iniciar Reprodução"><i class="fas fa-play-circle text-orange-500"></i></button>
+                            <button title="Mais Informações"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                </a>
+                <!-- Anime Card 5 -->
+                <a href="anime-details.html" class="anime-card-link bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group block relative">
+                    <img src="https://placehold.co/300x450/4a4a4a/ffffff?text=Anime+5" alt="Anime Thumbnail" class="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-3">
+                        <h4 class="text-white font-semibold text-lg truncate">Slice of Life</h4>
+                        <p class="text-gray-400 text-sm">Cotidiano, Drama</p>
+                    </div>
+                    <!-- Synopsis Overlay -->
+                    <div class="anime-card-overlay">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg mb-2">Slice of Life</h4>
+                            <p class="synopsis-text">Acompanhe a vida cotidiana de um grupo de amigos enquanto eles navegam pelos desafios da adolescência, amizades, primeiros amores e a busca por seus sonhos em uma cidade tranquila e cheia de charme.</p>
+                            <p class="text-gray-400 text-sm mt-2">1 Temporada</p>
+                            <p class="text-gray-400 text-sm">12 Episódios</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button title="Adicionar à Fila"><i class="fas fa-bookmark"></i></button>
+                            <button title="Iniciar Reprodução"><i class="fas fa-play-circle text-orange-500"></i></button>
+                            <button title="Mais Informações"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                </a>
+                <!-- Anime Card 6 -->
+                <a href="anime-details.html" class="anime-card-link bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group block relative">
+                    <img src="https://placehold.co/300x450/4a4a4a/ffffff?text=Anime+6" alt="Anime Thumbnail" class="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-3">
+                        <h4 class="text-white font-semibold text-lg truncate">Fantasia Sombria</h4>
+                        <p class="text-gray-400 text-sm">Fantasia, Terror</p>
+                    </div>
+                    <!-- Synopsis Overlay -->
+                    <div class="anime-card-overlay">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg mb-2">Fantasia Sombria</h4>
+                            <p class="synopsis-text">Em um reino amaldiçoado pela escuridão, uma jovem bruxa com poderes proibidos deve confrontar seus medos mais profundos e lutar contra criaturas aterrorizantes para restaurar a luz e a esperança em sua terra natal.</p>
+                            <p class="text-gray-400 text-sm mt-2">4 Temporadas</p>
+                            <p class="text-gray-400 text-sm">48 Episódios</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button title="Adicionar à Fila"><i class="fas fa-bookmark"></i></button>
+                            <button title="Iniciar Reprodução"><i class="fas fa-play-circle text-orange-500"></i></button>
+                            <button title="Mais Informações"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h3 class="text-white text-2xl md:text-3xl font-bold mb-6">Populares Agora</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+                <!-- Repeat Anime Cards for Popular Section -->
+                <a href="anime-details.html" class="anime-card-link bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group block relative">
+                    <img src="https://placehold.co/300x450/5a5a5a/ffffff?text=Popular+1" alt="Anime Thumbnail" class="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-3">
+                        <h4 class="text-white font-semibold text-lg truncate">Ação Frenética</h4>
+                        <p class="text-gray-400 text-sm">Ação, Aventura</p>
+                    </div>
+                    <!-- Synopsis Overlay -->
+                    <div class="anime-card-overlay">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg mb-2">Ação Frenética</h4>
+                            <p class="synopsis-text">Um grupo de mercenários de elite é contratado para uma missão impossível em uma cidade futurista dominada pelo crime. Eles devem usar suas habilidades únicas para sobreviver e completar o trabalho antes que seja tarde demais.</p>
+                            <p class="text-gray-400 text-sm mt-2">1 Temporada</p>
+                            <p class="text-gray-400 text-sm">12 Episódios</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button title="Adicionar à Fila"><i class="fas fa-bookmark"></i></button>
+                            <button title="Iniciar Reprodução"><i class="fas fa-play-circle text-orange-500"></i></button>
+                            <button title="Mais Informações"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                </a>
+                <a href="anime-details.html" class="anime-card-link bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group block relative">
+                    <img src="https://placehold.co/300x450/5a5a5a/ffffff?text=Popular+2" alt="Anime Thumbnail" class="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-3">
+                        <h4 class="text-white font-semibold text-lg truncate">Drama Emocionante</h4>
+                        <p class="text-gray-400 text-sm">Drama, Psicológico</p>
+                    </div>
+                    <!-- Synopsis Overlay -->
+                    <div class="anime-card-overlay">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg mb-2">Drama Emocionante</h4>
+                            <p class="synopsis-text">A história de uma jovem que luta para superar um trauma passado e encontrar seu lugar no mundo. Com personagens complexos e uma narrativa profunda, este anime explora temas de cura, resiliência e a força do espírito humano.</p>
+                            <p class="text-gray-400 text-sm mt-2">1 Temporada</p>
+                            <p class="text-gray-400 text-sm">12 Episódios</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button title="Adicionar à Fila"><i class="fas fa-bookmark"></i></button>
+                            <button title="Iniciar Reprodução"><i class="fas fa-play-circle text-orange-500"></i></button>
+                            <button title="Mais Informações"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                </a>
+                <a href="anime-details.html" class="anime-card-link bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group block relative">
+                    <img src="https://placehold.co/300x450/5a5a5a/ffffff?text=Popular+3" alt="Anime Thumbnail" class="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-3">
+                        <h4 class="text-white font-semibold text-lg truncate">Fantasia Mágica</h4>
+                        <p class="text-gray-400 text-sm">Fantasia, Magia</p>
+                    </div>
+                    <!-- Synopsis Overlay -->
+                    <div class="anime-card-overlay">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg mb-2">Fantasia Mágica</h4>
+                            <p class="synopsis-text">Em um mundo onde a magia é tecida na própria existência, uma jovem feiticeira descobre um poder ancestral que pode mudar o destino de seu reino. Ela deve dominar suas habilidades e enfrentar uma antiga ameaça.</p>
+                            <p class="text-gray-400 text-sm mt-2">2 Temporadas</p>
+                            <p class="text-gray-400 text-sm">24 Episódios</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button title="Adicionar à Fila"><i class="fas fa-bookmark"></i></button>
+                            <button title="Iniciar Reprodução"><i class="fas fa-play-circle text-orange-500"></i></button>
+                            <button title="Mais Informações"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                </a>
+                <a href="anime-details.html" class="anime-card-link bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group block relative">
+                    <img src="https://placehold.co/300x450/5a5a5a/ffffff?text=Popular+4" alt="Anime Thumbnail" class="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-3">
+                        <h4 class="text-white font-semibold text-lg truncate">Esportes e Amizade</h4>
+                        <p class="text-gray-400 text-sm">Esportes, Shonen</p>
+                    </div>
+                    <!-- Synopsis Overlay -->
+                    <div class="anime-card-overlay">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg mb-2">Esportes e Amizade</h4>
+                            <p class="synopsis-text">Um time de basquete de ensino médio com membros desajustados sonha em chegar ao topo. Através de trabalho duro, desafios e o poder da amizade, eles buscam a vitória e superam suas limitações.</p>
+                            <p class="text-gray-400 text-sm mt-2">3 Temporadas</p>
+                            <p class="text-gray-400 text-sm">75 Episódios</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button title="Adicionar à Fila"><i class="fas fa-bookmark"></i></button>
+                            <button title="Iniciar Reprodução"><i class="fas fa-play-circle text-orange-500"></i></button>
+                            <button title="Mais Informações"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                </a>
+                <a href="anime-details.html" class="anime-card-link bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group block relative">
+                    <img src="https://placehold.co/300x450/5a5a5a/ffffff?text=Popular+5" alt="Anime Thumbnail" class="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-3">
+                        <h4 class="text-white font-semibold text-lg truncate">Aventura de Isekai</h4>
+                        <p class="text-gray-400 text-sm">Isekai, Aventura</p>
+                    </div>
+                    <!-- Synopsis Overlay -->
+                    <div class="anime-card-overlay">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg mb-2">Aventura de Isekai</h4>
+                            <p class="synopsis-text">Um jovem é transportado para um mundo de fantasia onde ele deve usar suas habilidades únicas para se tornar um herói. Ele encontra companheiros leais e enfrenta monstros e desafios em sua jornada para retornar para casa.</p>
+                            <p class="text-gray-400 text-sm mt-2">2 Temporadas</p>
+                            <p class="text-gray-400 text-sm">24 Episódios</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button title="Adicionar à Fila"><i class="fas fa-bookmark"></i></button>
+                            <button title="Iniciar Reprodução"><i class="fas fa-play-circle text-orange-500"></i></button>
+                            <button title="Mais Informações"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                </a>
+                <a href="anime-details.html" class="anime-card-link bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group block relative">
+                    <img src="https://placehold.co/300x450/5a5a5a/ffffff?text=Popular+6" alt="Anime Thumbnail" class="w-full h-48 object-cover rounded-t-lg group-hover:scale-105 transition-transform duration-300">
+                    <div class="p-3">
+                        <h4 class="text-white font-semibold text-lg truncate">Ação Sobrenatural</h4>
+                        <p class="text-gray-400 text-sm">Sobrenatural, Ação</p>
+                    </div>
+                    <!-- Synopsis Overlay -->
+                    <div class="anime-card-overlay">
+                        <div>
+                            <h4 class="text-white font-semibold text-lg mb-2">Ação Sobrenatural</h4>
+                            <p class="synopsis-text">Um grupo de caçadores de demônios protege a humanidade de ameaças sobrenaturais. Com poderes misteriosos e um passado sombrio, eles enfrentam criaturas das trevas em batalhas eletrizantes.</p>
+                            <p class="text-gray-400 text-sm mt-2">3 Temporadas</p>
+                            <p class="text-gray-400 text-sm">36 Episódios</p>
+                        </div>
+                        <div class="action-buttons">
+                            <button title="Adicionar à Fila"><i class="fas fa-bookmark"></i></button>
+                            <button title="Iniciar Reprodução"><i class="fas fa-play-circle text-orange-500"></i></button>
+                            <button title="Mais Informações"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-zinc-900 py-8 px-6 md:px-10 mt-auto rounded-t-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm space-y-4 md:space-y-0">
+            <div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2">
+                <a href="#" class="hover:text-white transition-colors">Sobre Nós</a>
+                <a href="#" class="hover:text-white transition-colors">Ajuda/FAQ</a>
+                <a href="#" class="hover:text-white transition-colors">Termos de Serviço</a>
+                <a href="#" class="hover:text-white transition-colors">Política de Privacidade</a>
+                <a href="#" class="hover:text-white transition-colors">Contato</a>
+            </div>
+            <div class="flex space-x-4">
+                <!-- Social Media Icons (Placeholder) -->
+                <a href="#" class="hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 10.702v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.188a11.644 11.644 0 006.29 1.843"></path></svg>
+                </a>
+                <a href="#" class="hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10z" clip-rule="evenodd"></path></svg>
+                </a>
+                <a href="#" class="hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.75 6.75a.75.75 0 100 1.5.75.75 0 000-1.5zM12 10a2 2 0 100 4 2 2 0 000-4zm-3.75 2.25a.75.75 0 100 1.5.75.75 0 000-1.5z"></path></svg>
+                </a>
+            </div>
+            <p>&copy; 2025 Meu Crunchyroll. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const userAvatar = document.getElementById('userAvatar');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const profileSelectionSection = document.getElementById('profileSelectionSection');
+
+        // Get profile links by their new IDs
+        const profileSystem = document.getElementById('profileSystem');
+        const profileLinker = document.getElementById('profileRaianne');
+
+        // Store original background image
+        const originalBg = "url('https://nexogeek.com.br/wp-content/uploads/2024/06/Anime-de-Gachiakuta-Oficialmente-Anunciado-para-2025.png')";
+
+        // Define background images for each profile
+        const profileBackgrounds = {
+            system: "url('https://nexogeek.com.br/wp-content/uploads/2024/06/Anime-de-Gachiakuta-Oficialmente-Anunciado-para-2025.png')",
+            Raianne: "url('https://placehold.co/1200x600/22c55e/ffffff?text=Fundo+Linker')",
+        };
+
+        userAvatar.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('active');
+        });
+
+        // Close the dropdown if the user clicks outside of it
+        window.addEventListener('click', (event) => {
+            if (!userAvatar.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+        // Function to change background
+        function changeBackground(imageUrl) {
+            profileSelectionSection.style.backgroundImage = imageUrl;
+        }
+
+        // Add event listeners for mouseenter and mouseleave for each profile
+        profileSystem.addEventListener('mouseenter', () => changeBackground(profileBackgrounds.system));
+        profileSystem.addEventListener('mouseleave', () => changeBackground(originalBg));
+
+        userAvatar.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('active');
+        });
+
+        // Close the dropdown if the user clicks outside of it
+        window.addEventListener('click', (event) => {
+            if (!userAvatar.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+        // Function to change background
+        function changeBackground(imageUrl) {
+            profileSelectionSection.style.backgroundImage = imageUrl;
+        }
+
+        // Add event listeners for mouseenter and mouseleave for each profile
+        profileSystem.addEventListener('mouseenter', () => changeBackground(profileBackgrounds.system));
+        profileSystem.addEventListener('mouseleave', () => changeBackground(originalBg));
+
+        profileRaianne.addEventListener('mouseenter', () => changeBackground(profileBackgrounds.Raianne));
+        profileRaianne.addEventListener('mouseleave', () => changeBackground(originalBg));
+
+
+    </script>
+
+</body>
+</html>

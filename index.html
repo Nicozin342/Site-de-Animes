@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Crunchyroll - Início</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Cor de fundo escura */
+            color: #e0e0e0; /* Cor do texto padrão */
+        }
+        /* Estilos para a barra de rolagem */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2a2a2a;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f47521; /* Cor laranja da Crunchyroll */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e06a1a;
+        }
+        /* Custom styles for dropdown visibility */
+        .dropdown-menu {
+            display: none;
+        }
+        .dropdown-menu.active {
+            display: block;
+        }
+        /* Transition for background image change */
+        #profileSelectionSection {
+            transition: background-image 0.5s ease-in-out;
+        }
+    </style>
+</head>
+    <!-- Main Content Area -->
+    <main class="flex-grow container mx-auto px-4 py-8 md:py-12">
+
+        <!-- User Profile Selection Section (Inspired by your image) -->
+        <section id="profileSelectionSection" class="flex flex-col items-center justify-center min-h-[calc(100vh-160px)] bg-zinc-900 rounded-xl shadow-xl p-8 mb-12" style="background-image: url('https://placehold.co/1200x600/1a1a1a/2a2a2a?text=Fundo+Abstrato'); background-size: cover; background-position: center;">
+            <h2 class="text-white text-3xl md:text-4xl font-bold mb-8 text-center drop-shadow-lg">Quem vai partir em uma aventura?</h2>
+            <div class="flex flex-wrap justify-center gap-8 mb-10">
+                <!-- Profile 1 - SYSTEM -->
+                <a href="file:///C:/Users/Nycolas/Desktop/Portifolio/Pagina%202.html" id="profileSystem" class="flex flex-col items-center group cursor-pointer">
+                    <img src="img perfil/img 2.jpg" alt="Profile System" class="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-transparent group-hover:border-orange-500 transition-all duration-300 transform group-hover:scale-105">
+                    <p class="text-white text-lg font-medium mt-3">SYSTEM</p>
+                </a>
+              </a>
+              <!-- Profile 2 - Linker -->
+              <a href="file:///C:/Users/Nycolas/Desktop/Portifolio/Pagina%203.html" id="profiRaianne" class="flex flex-col items-center group cursor-pointer">
+                  <img src="img perfil/img 4.jpg" alt="Profile Raianne" class="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-transparent group-hover:border-orange-500 transition-all duration-300 transform group-hover:scale-105">
+                  <p class="text-white text-lg font-medium mt-3">Raianne</p>
+              </a>
+                <!-- Add New Profile -->
+                <div class="flex flex-col items-center group cursor-pointer">
+                    <div class="w-28 h-28 md:w-32 md:h-32 rounded-full border-4 border-gray-500 flex items-center justify-center text-gray-500 group-hover:border-orange-500 group-hover:text-orange-500 transition-all duration-300 transform group-hover:scale-105">
+                        <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                    </div>
+                    <p class="text-white text-lg font-medium mt-3">Adicionar Novo</p>
+                </div>
+            </div>
+            <button class="bg-zinc-700 hover:bg-zinc-600 text-white font-semibold py-3 px-8 rounded-full transition-colors text-lg shadow-md hover:shadow-lg">
+                GERENCIAR PERFIS
+            </button>
+        </section>
+    <script>
+        const userAvatar = document.getElementById('profileSystem');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const profileSelectionSection = document.getElementById('profileSelectionSection');
+
+        // Get profile links by their new IDs
+        const profileSystem = document.getElementById('profileSystem');
+        const profileRaianne = document.getElementById('profileRaianne');
+        
+
+        // Store original background image
+        const originalBg = "url('https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/11/Kiki.jpg')";
+
+        // Define background images for each profile
+        const profileBackgrounds = {
+            system: "url('https://nexogeek.com.br/wp-content/uploads/2024/06/Anime-de-Gachiakuta-Oficialmente-Anunciado-para-2025.png')",
+            Raianne: "url('https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/11/Kiki.jpg')",
+        };
+
+        userAvatar.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('active');
+        });
+
+        // Close the dropdown if the user clicks outside of it
+        window.addEventListener('click', (event) => {
+            if (!userAvatar.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+        // Function to change background
+        function changeBackground(imageUrl) {
+            profileSelectionSection.style.backgroundImage = imageUrl;
+        }
+
+        // Add event listeners for mouseenter and mouseleave for each profile
+        profileSystem.addEventListener('mouseenter', () => changeBackground(profileBackgrounds.system));
+        profileSystem.addEventListener('mouseleave', () => changeBackground(originalBg));
+
+        profileRaianne.addEventListener('mouseenter', () => changeBackground(profileBackgrounds.Raianne));
+        profileRaianne.addEventListener('mouseleave', () => changeBackground(originalBg));
+
+
+    </script>
+
+</body>
+</html>
